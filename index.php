@@ -32,7 +32,7 @@
 					<form action="./_module/indexModu.php" method="post">
 						<div class="form-group">
 							<label for="para">Para</label>
-							<input type="text" name="for" class="form-control" id="para" placeholder="@dominio.com.br">
+							<input type="text" name="email" class="form-control" id="para" placeholder="@dominio.com.br">
 						</div>
 
 						<div class="form-group">
@@ -42,7 +42,7 @@
 
 						<div class="form-group">
 							<label for="mensagem">Mensagem</label>
-							<textarea name="mensege" class="form-control" id="mensagem"></textarea>
+							<textarea name="message" class="form-control" id="mensagem"></textarea>
 						</div>
 
 						<button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>

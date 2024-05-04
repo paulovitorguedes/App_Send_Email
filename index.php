@@ -29,20 +29,20 @@
 			<div class="col-md-12">
 
 				<div class="card-body font-weight-bold">
-					<form>
+					<form action="./_module/indexModu.php" method="post">
 						<div class="form-group">
 							<label for="para">Para</label>
-							<input type="text" class="form-control" id="para" placeholder="@dominio.com.br">
+							<input type="text" name="for" class="form-control" id="para" placeholder="@dominio.com.br">
 						</div>
 
 						<div class="form-group">
 							<label for="assunto">Assunto</label>
-							<input type="text" class="form-control" id="assunto" placeholder="Assundo do e-mail">
+							<input type="text" name="subject" class="form-control" id="assunto" placeholder="Assundo do e-mail">
 						</div>
 
 						<div class="form-group">
 							<label for="mensagem">Mensagem</label>
-							<textarea class="form-control" id="mensagem"></textarea>
+							<textarea name="mensege" class="form-control" id="mensagem"></textarea>
 						</div>
 
 						<button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>
@@ -53,5 +53,3 @@
 	</div>
 
 </body>
-
-</>

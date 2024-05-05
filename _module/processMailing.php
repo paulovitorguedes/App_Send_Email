@@ -24,13 +24,15 @@ $message = filter_input(INPUT_POST, 'message', FILTER_DEFAULT);
 
 if ($email && !empty($subject) && !empty($message)) {
     $mailing = new Email($email, $subject, $message);
-    send();
+    
+    // echo $mailing->__get('$email');
+    send($mailing);
 } else {
     echo "Falhou";
 }
 
 
-function send()
+function send($mailing)
 {
 
 
@@ -50,8 +52,9 @@ function send()
         $mail->Port = 465;                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('phpmailer.pvtestes@gmail.com', 'Mailer');
-        $mail->addAddress('phpmailer.pvtestes@gmail.com', 'phpmailer');     //Add a recipient
+        $mail->setFrom('phpmailer.pvtestes@gmail.com', 'APP SEND EMAIL');
+        $mail->addAddress($mailing->__get('$email'), 'phpmailing');     //Add a recipient
+        //$mail->addAddress('phpmailer.pvtestes@gmail.com', 'phpmailer');     //Add a recipient
         // $mail->addAddress('ellen@example.com');               //Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
@@ -63,12 +66,14 @@ function send()
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body = 'This is the HTML message body <strong>in bold!</strong>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        //$mail->Subject = 'Here is the subject';
+        //$mail->Body = 'This is the HTML message body <strong>in bold!</strong>';
+        $mail->Subject = $mailing->__get('$subject');
+        $mail->Body = $mailing->__get('$message');
+        $mail->AltBody = 'É necessário utilizar um client que suporte HTML';
 
         $mail->send();
-        echo 'Mensagem Enviada com sucesso';
+        echo 'E-mail Enviada com sucesso';
 
 
     } catch (Exception $e) {

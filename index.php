@@ -29,7 +29,7 @@
 			<div class="col-md-12">
 
 				<div class="card-body font-weight-bold">
-					<form action="./_module/indexModu.php" method="post">
+					<form action="./_module/processMailing.php" method="post">
 						<div class="form-group">
 							<label for="para">Para</label>
 							<input type="text" name="email" class="form-control" id="para" placeholder="@dominio.com.br">
